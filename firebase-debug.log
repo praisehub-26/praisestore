@@ -1,0 +1,19 @@
+[debug] [2026-05-21T17:02:46.705Z] ----------------------------------------------------------------------
+[debug] [2026-05-21T17:02:46.707Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\PC\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2026-05-21T17:02:46.707Z] CLI Version:   15.18.0
+[debug] [2026-05-21T17:02:46.707Z] Platform:      win32
+[debug] [2026-05-21T17:02:46.707Z] Node Version:  v24.15.0
+[debug] [2026-05-21T17:02:46.707Z] Time:          Thu May 21 2026 12:02:46 GMT-0500 (hora estándar de Perú)
+[debug] [2026-05-21T17:02:46.707Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\PC\Desktop\Mirenn WEB
+

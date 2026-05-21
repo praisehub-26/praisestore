@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda | Mirenn</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .grid-resultados {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .mensaje-vacio {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-gray-light);
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+                <div class="container top-bar-inner">
+            <div class="contact-info">
+                <span>📞 966064800</span>
+                <span>✉️ info@mirenn.com</span>
+            </div>
+			<div class="top-social" style="font-size: 18px;">
+				<a href="#" target="_blank" style="color: #1877F2;"><i class="fa-brands fa-facebook"></i></a>
+				<a href="#" target="_blank" style="color: #E4405F;"><i class="fa-brands fa-instagram"></i></a>
+				<a href="#" target="_blank" style="color: #000000;"><i class="fa-brands fa-tiktok"></i></a>
+				<a href="#" target="_blank" style="color: #FF0000;"><i class="fa-brands fa-youtube"></i></a>
+			</div>
+            <div class="user-links">
+                <a href="login.html" class="btn-top-login">👤 Iniciar Sesión</a>
+                <a href="https://wa.me/51966064800" target="_blank" class="btn-top-whatsapp"><i class="fa-brands fa-whatsapp" style="font-size: 14px;"></i> WhatsApp</a>
+                <a href="#" target="_blank" class="btn-top-facebook"><i class="fa-brands fa-facebook" style="font-size: 14px;"></i> Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="header-left">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo-dinamico logo-izquierdo" style="-webkit-mask-image: url('img/logo.png'); mask-image: url('img/logo.png');"></div>
+                </a>
+            </div>
+            <div class="logo-center">
+                <a href="index.html">
+                    <div class="logo-dinamico logo-central" style="-webkit-mask-image: url('img/praise-banner.png'); mask-image: url('img/praise-banner.png');"></div>
+                </a>
+            </div>
+            <div class="header-right">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="color: #25D366; font-size: 12px; font-weight: 700; white-space: nowrap;"><i class="fa-solid fa-bolt"></i> Compra rápida sin registro vía WhatsApp</span>
+                    <div class="cart-btn">
+                        <span>🛒 Mi Carrito</span>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="categoria.html?cat=bodas">Bodas</a></li>
+                <li><a href="categoria.html?cat=cajas">Cajas de Regalo</a></li>
+                <li><a href="categoria.html?cat=tazas">Tazas</a></li>
+                <li><a href="categoria.html?cat=polos">Polos</a></li>
+                <li><a href="categoria.html?cat=amor">Amor</a></li>
+                <li><a href="categoria.html?cat=aniversarios">Aniversarios</a></li>
+                <li><a href="categoria.html?cat=bebes">Bebés</a></li>
+                <li><a href="categoria.html?cat=cumpleanos">Cumpleaños</a></li>
+                <li><a href="categoria.html?cat=personalizados">Personalizados</a></li>
+                <li><a href="categoria.html?cat=florales">Arreglos Florales</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container" style="padding: 40px 30px; min-height: 60vh;">
+        <h2 id="titulo-busqueda" style="color: var(--text-gray); border-bottom: 2px solid var(--gray-light); padding-bottom: 10px;">Resultados de búsqueda</h2>
+        <div id="contenedor-resultados" class="grid-resultados">
+            </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Nosotros</h4>
+                <p>En Mirenn creamos detalles únicos hechos a mano. Personalizamos tazas, polos, arreglos sorpresa y stickers premium con corte plotter en Tacna.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Atención al Cliente</h4>
+                <p style="margin-bottom: 8px;"><a href="terminos.html" style="text-decoration: none; color: var(--text-gray);">📜 Términos y Condiciones</a></p>
+                <p style="margin-bottom: 8px;"><a href="envios.html" style="text-decoration: none; color: var(--text-gray);">📦 Envíos y Entregas</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Mirenn. Todos los derechos reservados. Tacna, Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const termino = params.get("q");
+            const titulo = document.getElementById("titulo-busqueda");
+            const contenedor = document.getElementById("contenedor-resultados");
+
+            if (!termino) {
+                titulo.textContent = "Búsqueda vacía";
+                contenedor.innerHTML = "<div class='mensaje-vacio'>Por favor, ingresa un producto en la barra de búsqueda.</div>";
+                return;
+            }
+
+            titulo.innerHTML = `Resultados para: <span style="color: var(--cyan-main);">"${termino}"</span>`;
+
+            const terminoLimpio = termino.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            
+            const resultados = baseDeDatosMirenn.filter(producto => {
+                const tituloLimpio = producto.titulo.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                const catLimpia = producto.categoria.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                return tituloLimpio.includes(terminoLimpio) || catLimpia.includes(terminoLimpio);
+            });
+
+            if (resultados.length === 0) {
+                contenedor.innerHTML = `
+                    <div class='mensaje-vacio'>
+                        <i class="fa-solid fa-magnifying-glass" style="font-size: 40px; color: var(--gray-mid); margin-bottom: 15px; display: block;"></i>
+                        No encontramos productos que coincidan con "${termino}".<br>Intenta usar palabras más generales como "taza", "polo" o "caja".
+                    </div>
+                `;
+            } else {
+                resultados.forEach(producto => {
+                    const tarjetaHTML = `
+                        <div class="product-card">
+                            <a href="detalle.html?id=${producto.id}" style="display: block; overflow: hidden; border-radius: 4px;">
+                                <img src="${producto.imagen}" alt="${producto.titulo}" onerror="if(!this.dataset.intentado){ this.dataset.intentado = true; this.src = this.src.includes('.jpg') ? this.src.replace('.jpg', '.png') : this.src.replace('.png', '.jpg'); }">
+                            </a>
+                            <div class="prod-details">
+                                <h3 title="${producto.nota}">${producto.titulo}</h3>
+                                <p style="font-size: 11px; color: var(--text-gray-light); margin-bottom: 8px;">${producto.nota}</p>
+                                
+                                <div class="price-row-vertical">
+                                    <span class="price">S/. ${producto.precio}</span>
+                                    <a href="detalle.html?id=${producto.id}" class="btn-detalles-iluminado">Ver Detalles</a>
+                                    <button class="btn-mini-carrito" onclick="agregarAlCarrito('${producto.id}', 1)">
+                                        <i class="fa-solid fa-cart-plus"></i> Añadir al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    contenedor.insertAdjacentHTML("beforeend", tarjetaHTML);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

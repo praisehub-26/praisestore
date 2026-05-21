@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | PraiseStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+                <div class="container top-bar-inner">
+            <div class="contact-info">
+                <span>📞 966064800</span>
+                <span>✉️ info@mirenn.com</span>
+            </div>
+			<div class="top-social" style="font-size: 18px;">
+				<a href="#" target="_blank" style="color: #1877F2;"><i class="fa-brands fa-facebook"></i></a>
+				<a href="#" target="_blank" style="color: #E4405F;"><i class="fa-brands fa-instagram"></i></a>
+				<a href="#" target="_blank" style="color: #000000;"><i class="fa-brands fa-tiktok"></i></a>
+				<a href="#" target="_blank" style="color: #FF0000;"><i class="fa-brands fa-youtube"></i></a>
+			</div>
+            <div class="user-links">
+                <a href="login.html" class="btn-top-login">👤 Iniciar Sesión</a>
+                <a href="https://wa.me/51966064800" target="_blank" class="btn-top-whatsapp"><i class="fa-brands fa-whatsapp" style="font-size: 14px;"></i> WhatsApp</a>
+                <a href="#" target="_blank" class="btn-top-facebook"><i class="fa-brands fa-facebook" style="font-size: 14px;"></i> Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="header-left">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo-dinamico logo-izquierdo" style="-webkit-mask-image: url('img/logo.png'); mask-image: url('img/logo.png');"></div>
+                </a>
+            </div>
+            <div class="logo-center">
+                <a href="index.html">
+                    <div class="logo-dinamico logo-central" style="-webkit-mask-image: url('img/praise-banner.png'); mask-image: url('img/praise-banner.png');"></div>
+                </a>
+            </div>
+            <div class="header-right">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="color: #25D366; font-size: 12px; font-weight: 700; white-space: nowrap;"><i class="fa-solid fa-bolt"></i> Compra rápida sin registro vía WhatsApp</span>
+                    <div class="cart-btn">
+                        <span>🛒 Mi Carrito</span>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container login-section">
+        <div class="login-card">
+            <h2 style="text-align: center; color: var(--text-gray); margin-bottom: 25px;">Iniciar Sesión</h2>
+            
+            <form id="form-login" class="login-form">
+                <div id="mensaje-error" style="color: red; font-size: 13px; text-align: center; display: none;"></div>
+                
+                <div class="form-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="login-email" placeholder="ejemplo@correo.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+                
+                <div class="form-options">
+                    <label style="display: flex; align-items: center; gap: 5px; font-size: 13px; cursor: pointer;">
+                        <input type="checkbox"> Recordarme
+                    </label>
+                    <a href="#" class="forgot-pass">¿Olvidaste tu contraseña?</a>
+                </div>
+                
+                <button type="submit" class="btn-login-submit" id="btn-submit-login">Ingresar a mi cuenta</button>
+            </form>
+            
+            <div class="login-footer">
+                <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Nosotros</h4>
+                <p>En PraiseStore creamos detalles únicos hechos a mano.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Atención al Cliente</h4>
+                <p><a href="terminos.html" style="text-decoration: none; color: var(--text-gray);">📜 Términos</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 PraiseStore. Todos los derechos reservados. Tacna, Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        // TUS CLAVES REALES
+        const firebaseConfig = {
+            apiKey: "AIzaSyA_8lXh6-tQDNi8A9GQHky4NUgzqGPEd2A",
+            authDomain: "praisestore-26.firebaseapp.com",
+            projectId: "praisestore-26",
+            storageBucket: "praisestore-26.firebasestorage.app",
+            messagingSenderId: "453421103540",
+            appId: "1:453421103540:web:d2f0072d87859301521ae1",
+            measurementId: "G-Q1NNPF25Q7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById("form-login").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const email = document.getElementById("login-email").value;
+            const pass = document.getElementById("login-password").value;
+            const msjError = document.getElementById("mensaje-error");
+            const btnSubmit = document.getElementById("btn-submit-login");
+
+            btnSubmit.textContent = "Verificando...";
+            btnSubmit.disabled = true;
+
+            signInWithEmailAndPassword(auth, email, pass)
+                .then((userCredential) => {
+                    window.location.href = "index.html"; 
+                })
+                .catch((error) => {
+                    btnSubmit.textContent = "Ingresar a mi cuenta";
+                    btnSubmit.disabled = false;
+                    msjError.style.display = "block";
+                    if(error.code === 'auth/invalid-credential' || error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+                        msjError.textContent = "Correo o contraseña incorrectos.";
+                    } else {
+                        msjError.textContent = "Error: " + error.message;
+                    }
+                });
+        });
+    </script>
+</body>
+</html>

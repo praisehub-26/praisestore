@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito | Mirenn</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .carrito-container { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; }
+        @media(max-width: 800px) { .carrito-container { grid-template-columns: 1fr; } }
+        .cart-item { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid var(--gray-light); }
+        .cart-item img { width: 80px; height: 80px; object-fit: cover; border-radius: 6px; }
+        .cart-info { flex: 1; padding: 0 15px; }
+        .cart-info h4 { margin-bottom: 5px; color: var(--text-gray); }
+        .cart-info p { font-size: 13px; color: var(--text-gray-light); }
+        .btn-eliminar { color: #E4405F; cursor: pointer; border: none; background: none; font-size: 18px; }
+        .resumen-card { background: var(--gray-lightest); padding: 25px; border-radius: 8px; border: 1px solid var(--gray-light); }
+        .resumen-card h3 { margin-bottom: 20px; border-bottom: 1px solid var(--gray-light); padding-bottom: 10px; }
+        .resumen-row { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 16px; }
+        .resumen-total { font-size: 20px; font-weight: 700; color: var(--cyan-main); border-top: 1px solid var(--gray-light); padding-top: 15px; }
+        .btn-enviar-pedido { background-color: #25D366; color: white; width: 100%; padding: 15px; border: none; border-radius: 4px; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.3s; margin-top: 15px; }
+        .btn-enviar-pedido:hover { background-color: #1EBE5D; }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+                <div class="container top-bar-inner">
+            <div class="contact-info">
+                <span>📞 966064800</span>
+                <span>✉️ info@mirenn.com</span>
+            </div>
+			<div class="top-social" style="font-size: 18px;">
+				<a href="#" target="_blank" style="color: #1877F2;"><i class="fa-brands fa-facebook"></i></a>
+				<a href="#" target="_blank" style="color: #E4405F;"><i class="fa-brands fa-instagram"></i></a>
+				<a href="#" target="_blank" style="color: #000000;"><i class="fa-brands fa-tiktok"></i></a>
+				<a href="#" target="_blank" style="color: #FF0000;"><i class="fa-brands fa-youtube"></i></a>
+			</div>
+            <div class="user-links">
+                <a href="login.html" class="btn-top-login">👤 Iniciar Sesión</a>
+                <a href="https://wa.me/51966064800" target="_blank" class="btn-top-whatsapp"><i class="fa-brands fa-whatsapp" style="font-size: 14px;"></i> WhatsApp</a>
+                <a href="#" target="_blank" class="btn-top-facebook"><i class="fa-brands fa-facebook" style="font-size: 14px;"></i> Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="header-left">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo-dinamico logo-izquierdo" style="-webkit-mask-image: url('img/logo.png'); mask-image: url('img/logo.png');"></div>
+                </a>
+            </div>
+            <div class="logo-center">
+                <a href="index.html">
+                    <div class="logo-dinamico logo-central" style="-webkit-mask-image: url('img/praise-banner.png'); mask-image: url('img/praise-banner.png');"></div>
+                </a>
+            </div>
+            <div class="header-right">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="color: #25D366; font-size: 12px; font-weight: 700; white-space: nowrap;"><i class="fa-solid fa-bolt"></i> Compra rápida sin registro vía WhatsApp</span>
+                    <div class="cart-btn">
+                        <span>🛒 Mi Carrito</span>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="categoria.html?cat=bodas">Bodas</a></li>
+                <li><a href="categoria.html?cat=cajas">Cajas de Regalo</a></li>
+                <li><a href="categoria.html?cat=tazas">Tazas</a></li>
+                <li><a href="categoria.html?cat=polos">Polos</a></li>
+                <li><a href="categoria.html?cat=amor">Amor</a></li>
+                <li><a href="categoria.html?cat=aniversarios">Aniversarios</a></li>
+                <li><a href="categoria.html?cat=bebes">Bebés</a></li>
+                <li><a href="categoria.html?cat=cumpleanos">Cumpleaños</a></li>
+                <li><a href="categoria.html?cat=personalizados">Personalizados</a></li>
+                <li><a href="categoria.html?cat=florales">Arreglos Florales</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container" style="padding: 50px 30px; min-height: 60vh;">
+        <h2 style="color: var(--text-gray); margin-bottom: 30px;">Tu Carrito de Compras</h2>
+        <div class="carrito-container" id="vista-carrito">
+            <p>Cargando...</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Nosotros</h4>
+                <p>En Mirenn creamos detalles únicos hechos a mano. Personalizamos tazas, polos, arreglos sorpresa y stickers premium con corte plotter en Tacna.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Atención al Cliente</h4>
+                <p style="margin-bottom: 8px;"><a href="terminos.html" style="text-decoration: none; color: var(--text-gray);">📜 Términos y Condiciones</a></p>
+                <p style="margin-bottom: 8px;"><a href="envios.html" style="text-decoration: none; color: var(--text-gray);">📦 Envíos y Entregas</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Mirenn. Todos los derechos reservados. Tacna, Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            renderizarCarrito();
+        });
+
+        function renderizarCarrito() {
+            const contenedor = document.getElementById("vista-carrito");
+            let carritoGuardado = JSON.parse(localStorage.getItem("carritoMirenn")) || [];
+            
+            if (carritoGuardado.length === 0) {
+                contenedor.innerHTML = "<h3 style='color:var(--text-gray-light);'>Tu carrito está vacío. <a href='index.html' style='color:var(--cyan-main);'>Ir a comprar</a></h3>";
+                return;
+            }
+
+            let htmlProductos = "<div class='cart-list'>";
+            let total = 0;
+            let textoWhatsApp = "Hola Mirenn, quiero realizar el siguiente pedido:%0A%0A";
+
+            carritoGuardado.forEach((item, index) => {
+                const producto = baseDeDatosMirenn.find(p => p.id === item.id);
+                if (producto) {
+                    const subtotal = (parseFloat(producto.precio) * item.cantidad).toFixed(2);
+                    total += parseFloat(subtotal);
+                    
+                    textoWhatsApp += `- ${item.cantidad}x ${producto.titulo} (S/ ${subtotal})%0A`;
+
+                    htmlProductos += `
+                        <div class="cart-item">
+                            <img src="${producto.imagen}" alt="${producto.titulo}" onerror="if(!this.dataset.intentado){ this.dataset.intentado = true; this.src = this.src.includes('.jpg') ? this.src.replace('.jpg', '.png') : this.src.replace('.png', '.jpg'); }">
+                            <div class="cart-info">
+                                <h4>${producto.titulo}</h4>
+                                <p>S/ ${producto.precio} x ${item.cantidad}</p>
+                            </div>
+                            <div style="font-weight:bold; margin-right: 15px;">S/ ${subtotal}</div>
+                            <button class="btn-eliminar" onclick="eliminarDelCarrito(${index})"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    `;
+                }
+            });
+
+            textoWhatsApp += `%0ATotal a pagar: *S/ ${total.toFixed(2)}*`;
+
+            htmlProductos += "</div>";
+            const htmlResumen = `
+                <div class="resumen-card">
+                    <h3>Resumen de Compra</h3>
+                    <div class="resumen-row">
+                        <span>Subtotal</span>
+                        <span>S/ ${total.toFixed(2)}</span>
+                    </div>
+                    <div class="resumen-row resumen-total">
+                        <span>Total</span>
+                        <span>S/ ${total.toFixed(2)}</span>
+                    </div>
+                    <button class="btn-enviar-pedido" onclick="window.open('https://wa.me/51966064800?text=${textoWhatsApp}', '_blank')"><i class="fa-brands fa-whatsapp"></i> Enviar Pedido por WhatsApp</button>
+                </div>
+            `;
+
+            contenedor.innerHTML = htmlProductos + htmlResumen;
+        }
+
+        function eliminarDelCarrito(index) {
+            let carritoGuardado = JSON.parse(localStorage.getItem("carritoMirenn")) || [];
+            carritoGuardado.splice(index, 1);
+            localStorage.setItem("carritoMirenn", JSON.stringify(carritoGuardado));
+            actualizarContador();
+            renderizarCarrito();
+        }
+    </script>
+</body>
+</html>

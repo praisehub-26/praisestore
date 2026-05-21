@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto | PraiseStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="contact-info">
+                <span>📞 966064800</span>
+                <span>✉️ info@mirenn.com</span>
+            </div>
+			<div class="top-social" style="font-size: 18px;">
+				<a href="#" target="_blank" style="color: #1877F2;"><i class="fa-brands fa-facebook"></i></a>
+				<a href="#" target="_blank" style="color: #E4405F;"><i class="fa-brands fa-instagram"></i></a>
+				<a href="#" target="_blank" style="color: #000000;"><i class="fa-brands fa-tiktok"></i></a>
+				<a href="#" target="_blank" style="color: #FF0000;"><i class="fa-brands fa-youtube"></i></a>
+			</div>
+            <div class="user-links">
+                <a href="login.html" class="btn-top-login">👤 Iniciar Sesión</a>
+                <a href="https://wa.me/51966064800" target="_blank" class="btn-top-whatsapp"><i class="fa-brands fa-whatsapp" style="font-size: 14px;"></i> WhatsApp</a>
+                <a href="#" target="_blank" class="btn-top-facebook"><i class="fa-brands fa-facebook" style="font-size: 14px;"></i> Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="header-left">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo-dinamico logo-izquierdo" style="-webkit-mask-image: url('img/logo.png'); mask-image: url('img/logo.png');"></div>
+                </a>
+            </div>
+            <div class="logo-center">
+                <a href="index.html">
+                    <div class="logo-dinamico logo-central" style="-webkit-mask-image: url('img/praise-banner.png'); mask-image: url('img/praise-banner.png');"></div>
+                </a>
+            </div>
+            <div class="header-right">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="color: #25D366; font-size: 12px; font-weight: 700; white-space: nowrap;"><i class="fa-solid fa-bolt"></i> Compra rápida sin registro vía WhatsApp</span>
+                    <div class="cart-btn">
+                        <span>🛒 Mi Carrito</span>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="categoria.html?cat=bodas">Bodas</a></li>
+                <li><a href="categoria.html?cat=cajas">Cajas de Regalo</a></li>
+                <li><a href="categoria.html?cat=tazas">Tazas</a></li>
+                <li><a href="categoria.html?cat=polos">Polos</a></li>
+                <li><a href="categoria.html?cat=amor">Amor</a></li>
+                <li><a href="categoria.html?cat=aniversarios">Aniversarios</a></li>
+                <li><a href="categoria.html?cat=bebes">Bebés</a></li>
+                <li><a href="categoria.html?cat=cumpleanos">Cumpleaños</a></li>
+                <li><a href="categoria.html?cat=personalizados">Personalizados</a></li>
+                <li><a href="categoria.html?cat=florales">Arreglos Florales</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container" style="padding: 50px 30px; min-height: 60vh;" id="zona-detalle">
+        <div style="text-align: center; color: var(--text-gray-light);">Cargando producto...</div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Nosotros</h4>
+                <p>En Mirenn creamos detalles únicos hechos a mano. Personalizamos tazas, polos, arreglos sorpresa y stickers premium con corte plotter en Tacna.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Atención al Cliente</h4>
+                <p style="margin-bottom: 8px;"><a href="terminos.html" style="text-decoration: none; color: var(--text-gray);">📜 Términos y Condiciones</a></p>
+                <p style="margin-bottom: 8px;"><a href="envios.html" style="text-decoration: none; color: var(--text-gray);">📦 Envíos y Entregas</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Mirenn. Todos los derechos reservados. Tacna, Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const idProducto = params.get("id");
+            const zonaDetalle = document.getElementById("zona-detalle");
+
+            if (!idProducto) {
+                zonaDetalle.innerHTML = "<h2 style='text-align:center;'>Producto no encontrado</h2>";
+                return;
+            }
+
+            const producto = baseDeDatosMirenn.find(p => p.id === idProducto);
+
+            if (producto) {
+                document.title = producto.titulo + " | Mirenn";
+                
+                const material = producto.material || "Material premium seleccionado";
+                const medidas = producto.medidas || "Tamaño estándar";
+                const tiempo = producto.tiempo || "24 a 48 horas de producción";
+                
+                const rutaBase = producto.imagen.substring(0, producto.imagen.lastIndexOf('.'));
+                const extension = producto.imagen.substring(producto.imagen.lastIndexOf('.'));
+
+                const galeriaHTML = `
+                    <img src="${producto.imagen}" class="mini-activa" onclick="cambiarImagen(this, this.src)" onerror="if(!this.dataset.intentado){ this.dataset.intentado = true; this.src = this.src.includes('.jpg') ? this.src.replace('.jpg', '.png') : this.src.replace('.png', '.jpg'); }">
+                    <img src="${rutaBase}-1${extension}" onclick="cambiarImagen(this, this.src)" onerror="if(!this.dataset.intentado){ this.dataset.intentado = true; this.src = this.src.includes('.jpg') ? this.src.replace('.jpg', '.png') : this.src.replace('.png', '.jpg'); } else { this.style.display='none'; }">
+                    <img src="${rutaBase}-2${extension}" onclick="cambiarImagen(this, this.src)" onerror="if(!this.dataset.intentado){ this.dataset.intentado = true; this.src = this.src.includes('.jpg') ? this.src.replace('.jpg', '.png') : this.src.replace('.png', '.jpg'); } else { this.style.display='none'; }">
+                    <img src="${rutaBase}-3${extension}" onclick="cambiarImagen(this, this.src)" onerror="if(!this.dataset.intentado){ this.dataset.intentado = true; this.src = this.src.includes('.jpg') ? this.src.replace('.jpg', '.png') : this.src.replace('.png', '.jpg'); } else { this.style.display='none'; }">
+                `;
+
+                const nombresCategorias = {
+                    bodas: "Bodas", cajas: "Cajas de Regalo", tazas: "Tazas", polos: "Polos",
+                    amor: "Amor", aniversarios: "Aniversarios", bebes: "Bebés", cumpleanos: "Cumpleaños",
+                    personalizados: "Personalizados", florales: "Arreglos Florales"
+                };
+                const nombreCategoriaTexto = nombresCategorias[producto.categoria] || "Catálogo";
+
+                zonaDetalle.innerHTML = `
+                    <div class="breadcrumb">
+                        <a href="index.html"><i class="fa-solid fa-house-chimney"></i> Inicio</a>
+                        <i class="fa-solid fa-angle-right separator"></i>
+                        <a href="categoria.html?cat=${producto.categoria}">${nombreCategoriaTexto}</a>
+                        <i class="fa-solid fa-angle-right separator"></i>
+                        <span class="current">${producto.titulo}</span>
+                    </div>
+
+                    <div class="detalle-grid">
+                        <div class="detalle-galeria">
+                            <div class="zoom-container" onmousemove="moverZoom(event)" onmouseleave="resetZoom(event)">
+                                <img id="imagen-principal" src="${producto.imagen}" alt="${producto.titulo}" class="img-principal" onerror="if(!this.dataset.intentado){ this.dataset.intentado = true; this.src = this.src.includes('.jpg') ? this.src.replace('.jpg', '.png') : this.src.replace('.png', '.jpg'); }">
+                            </div>
+                            <div class="miniaturas">
+                                ${galeriaHTML}
+                            </div>
+                        </div>
+                        
+                        <div class="detalle-info">
+                            <span class="detalle-categoria">${producto.categoria.toUpperCase()}</span>
+                            <h1>${producto.titulo}</h1>
+                            <p class="detalle-nota">${producto.nota}</p>
+                            <div class="detalle-precio">S/ ${producto.precio}</div>
+                            
+                            <ul class="lista-detalles">
+                                <li><i class="fa-solid fa-ruler-combined"></i> <strong>Medidas:</strong> ${medidas}</li>
+                                <li><i class="fa-solid fa-box-open"></i> <strong>Material:</strong> ${material}</li>
+                                <li><i class="fa-solid fa-clock"></i> <strong>Producción:</strong> ${tiempo}</li>
+                            </ul>
+                            
+                            <div class="detalle-descripcion">
+                                <p>Producto 100% personalizado. Una vez realizada tu compra, nos contactaremos contigo para definir el diseño exacto que deseas plasmar.</p>
+                            </div>
+                            
+                            <div class="detalle-acciones" style="display: block; margin-bottom: 25px;">
+                                <p style="color: #25D366; font-size: 13px; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 5px;">
+                                    <i class="fa-brands fa-whatsapp" style="font-size: 16px;"></i> 
+                                    Añade al carrito y compra todos tus pedidos vía WhatsApp
+                                </p>
+                                <div style="display: flex; gap: 15px; align-items: center;">
+                                    <input type="number" id="cantidad" value="1" min="1" class="input-cantidad">
+                                    <button class="btn-comprar" onclick="agregarAlCarrito('${producto.id}', parseInt(document.getElementById('cantidad').value))">🛒 Añadir al Carrito</button>
+                                </div>
+                            </div>
+                            
+                            <div class="detalle-acciones">
+                                <a href="https://wa.me/51966064800?text=Hola,%20me%20interesa%20el%20producto:%20${producto.titulo}" target="_blank" class="btn-social-comprar btn-whatsapp">
+                                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
+                                </a>
+                                <a href="#" target="_blank" class="btn-social-comprar btn-messenger">
+                                    <i class="fa-brands fa-facebook-messenger"></i> Messenger
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                zonaDetalle.innerHTML = "<h2 style='text-align:center;'>El producto ya no está disponible</h2>";
+            }
+        });
+
+        function cambiarImagen(elemento, src) {
+            const img = document.getElementById("imagen-principal");
+            document.querySelectorAll('.miniaturas img').forEach(m => m.classList.remove('mini-activa'));
+            elemento.classList.add('mini-activa');
+            img.style.opacity = "0";
+            setTimeout(() => {
+                img.src = src;
+                img.style.opacity = "1";
+            }, 200);
+        }
+
+        function moverZoom(e) {
+            const img = document.getElementById("imagen-principal");
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            img.style.transformOrigin = `${x}% ${y}%`;
+        }
+
+        function resetZoom(e) {
+            const img = document.getElementById("imagen-principal");
+            img.style.transformOrigin = `50% 50%`;
+        }
+    </script>
+</body>
+</html>

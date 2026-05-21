@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | PraiseStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="contact-info">
+                <span>📞 966064800</span>
+                <span>✉️ info@mirenn.com</span>
+            </div>
+            <div class="top-social" style="font-size: 18px;">
+                <a href="#" target="_blank" style="color: #1877F2;"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" target="_blank" style="color: #E4405F;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" target="_blank" style="color: #000000;"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" target="_blank" style="color: #FF0000;"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="user-links">
+                <a href="login.html" class="btn-top-login">👤 Iniciar Sesión</a>
+                <a href="https://wa.me/51966064800" target="_blank" class="btn-top-whatsapp"><i class="fa-brands fa-whatsapp" style="font-size: 14px;"></i> WhatsApp</a>
+                <a href="#" target="_blank" class="btn-top-facebook"><i class="fa-brands fa-facebook" style="font-size: 14px;"></i> Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="header-left">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo-dinamico logo-izquierdo" style="-webkit-mask-image: url('img/logo.png'); mask-image: url('img/logo.png');"></div>
+                </a>
+            </div>
+            
+            <div class="logo-center">
+                <a href="index.html">
+                    <div class="logo-dinamico logo-central" style="-webkit-mask-image: url('img/praise-banner.png'); mask-image: url('img/praise-banner.png');"></div>
+                </a>
+            </div>
+
+            <div class="header-right">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="color: #25D366; font-size: 12px; font-weight: 700; white-space: nowrap;"><i class="fa-solid fa-bolt"></i> Compra rápida sin registro vía WhatsApp</span>
+                    <div class="cart-btn">
+                        <span>🛒 Mi Carrito</span>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="categoria.html?cat=bodas" id="menu-bodas">Bodas</a></li>
+                <li><a href="categoria.html?cat=cajas" id="menu-cajas">Cajas de Regalo</a></li>
+                <li><a href="categoria.html?cat=tazas" id="menu-tazas">Tazas</a></li>
+                <li><a href="categoria.html?cat=polos" id="menu-polos">Polos</a></li>
+                <li><a href="categoria.html?cat=amor" id="menu-amor">Amor</a></li>
+                <li><a href="categoria.html?cat=aniversarios" id="menu-aniversarios">Aniversarios</a></li>
+                <li><a href="categoria.html?cat=bebes" id="menu-bebes">Bebés</a></li>
+                <li><a href="categoria.html?cat=cumpleanos" id="menu-cumpleanos">Cumpleaños</a></li>
+                <li><a href="categoria.html?cat=personalizados" id="menu-personalizados">Personalizados</a></li>
+                <li><a href="categoria.html?cat=florales" id="menu-florales">Arreglos Florales</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div style="width: 100%; height: 350px; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); background-color: var(--white);">
+                <div class="slide-img" style="width: 65%;">
+                    <img id="banner-img" alt="Banner Categoría">
+                </div>
+                <div id="banner-text-container" class="slide-text" style="width: 50%;">
+                    <h2 id="banner-titulo">Cargando...</h2>
+                    <div class="decorator-line"></div>
+                    <p id="banner-descripcion">Espere un momento por favor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title" id="titulo-pagina">Productos</h2>
+            <div class="products-grid" id="contenedor-productos"></div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Nosotros</h4>
+                <p>En Mirenn creamos detalles únicos hechos a mano. Personalizamos tazas, polos, arreglos sorpresa y stickers premium con corte plotter en Tacna, con envíos a todo el Perú.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Atención al Cliente</h4>
+                <p style="margin-bottom: 8px;"><a href="terminos.html" style="text-decoration: none; color: var(--text-gray);">📜 Términos y Condiciones</a></p>
+                <p style="margin-bottom: 8px;"><a href="envios.html" style="text-decoration: none; color: var(--text-gray);">📦 Envíos y Entregas</a></p>
+                <p><a href="mailto:info@mirenn.com" style="text-decoration: none; color: var(--text-gray);">✉️ Contacto por Email</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Nuestras Redes</h4>
+                <div class="footer-social" style="display: flex; gap: 15px; margin-top: 10px; font-size: 24px;">
+                    <a href="#" target="_blank" style="color: #1877F2;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" target="_blank" style="color: #E4405F;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank" style="color: #000000;"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" target="_blank" style="color: #FF0000;"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Mirenn. Todos los derechos reservados. Tacna, Perú.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const infoCategorias = {
+            bodas: { titulo: "Colección Bodas", desc: "Detalles únicos e inolvidables para tu gran día.", img: "img/bodas/banner-bodas.jpg", bg: "bg-cyan" },
+            cajas: { titulo: "Cajas de Regalo", desc: "Sorpresas listas para entregar. Llena su día de alegría.", img: "img/cajas/banner-cajas.jpg", bg: "bg-rose" },
+            tazas: { titulo: "Tazas Personalizadas", desc: "El detalle perfecto para empezar el día. Diseños únicos.", img: "img/tazas/banner-tazas.jpg", bg: "bg-dark" },
+            polos: { titulo: "Polos Personalizados", desc: "Lleva tu estilo o sorprende con un detalle único de algodón premium.", img: "img/polos/banner-polos.jpg", bg: "bg-cyan" },
+            amor: { titulo: "Colección Amor", desc: "Enamora con detalles que hablan por ti y expresan tus sentimientos.", img: "img/amor/banner-amor.jpg", bg: "bg-rose" },
+            aniversarios: { titulo: "Aniversarios", desc: "Celebra cada año juntos con recuerdos y regalos inolvidables.", img: "img/aniversarios/banner-aniversarios.jpg", bg: "bg-dark" },
+            bebes: { titulo: "Línea de Bebés", desc: "Detalles tiernos y delicados para la llegada del nuevo integrante.", img: "img/bebes/banner-bebes.jpg", bg: "bg-cyan" },
+            cumpleanos: { titulo: "Cumpleaños", desc: "¡Celebra un año más de vida a lo grande con packs festivos!", img: "img/cumpleanos/banner-cumpleanos.jpg", bg: "bg-rose" },
+            personalizados: { titulo: "Trabajos Personalizados", desc: "Tus ideas hechas realidad con acabados profesionales y cortes limpios.", img: "img/personalizados/banner-personalizados.jpg", bg: "bg-dark" },
+            florales: { titulo: "Arreglos Florales", desc: "Ramos selectos y cajas diseñadas con las flores más frescas.", img: "img/florales/banner-florales.jpg", bg: "bg-cyan" }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const catActual = params.get("cat") || "bodas";
+
+        if (infoCategorias[catActual]) {
+            document.getElementById("banner-titulo").textContent = infoCategorias[catActual].titulo;
+            document.getElementById("titulo-pagina").textContent = infoCategorias[catActual].titulo;
+            document.getElementById("banner-descripcion").textContent = infoCategorias[catActual].desc;
+            document.getElementById("banner-text-container").className = "slide-text " + infoCategorias[catActual].bg;
+            
+            // Lógica exacta para asegurar la carga JPG/PNG del banner
+            const imgElement = document.getElementById("banner-img");
+            imgElement.dataset.intentado = "false"; 
+            imgElement.src = infoCategorias[catActual].img;
+            
+            imgElement.onerror = function() {
+                if (this.dataset.intentado === "false") {
+                    this.dataset.intentado = "true";
+                    this.src = this.src.includes('.jpg') ? this.src.replace('.jpg', '.png') : this.src.replace('.png', '.jpg');
+                }
+            };
+            
+            const botonActivo = document.getElementById("menu-" + catActual);
+            if (botonActivo) botonActivo.classList.add("highlight-link");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
